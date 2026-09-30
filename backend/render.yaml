@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: mams-backend
+    env: java
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/mams-backend-1.0.0.jar
+    envVars:
+      - key: DB_HOST
+        value: localhost
+      - key: DB_PORT
+        value: 3306
+      - key: DB_NAME
+        value: military_asset_db
+      - key: DB_USERNAME
+        value: root
+      - key: DB_PASSWORD
+        value: 123456
